@@ -102,7 +102,10 @@ namespace TicTacToe
             int x = BoardWidth * p.X / ClientSize.Width;
             int y = BoardHeight * p.Y / ClientSize.Height;
 
-            _Game.DoTurn(x, y);
+            if (!_Game.DoTurn(x, y))
+            {
+                return;
+            }
 
             Invalidate();
 
